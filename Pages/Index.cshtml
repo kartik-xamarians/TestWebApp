@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+    <script>
+        document.addEventListener("visibilitychange", function () {
+            if (document.visibilityState === "visible") {
+                startTimer(); // Restart the API call timer
+            } else {
+                stopTimer(); // Stop when hidden
+            }
+        });
+
+        let apiTimer;
+
+        function startTimer() {
+            stopTimer(); // Ensure previous timer is cleared before starting a new one
+            apiTimer = setInterval(() => {
+                alert('visible');
+            }, 5000);
+        }
+
+        function stopTimer() {
+            if (apiTimer) {
+                clearInterval(apiTimer);
+            }
+        }
+
+        // Start the timer initially when the page loads
+        startTimer();
+    </script>
+
+</div>
