@@ -13,7 +13,8 @@
     <script>
         document.addEventListener("visibilitychange", function () {
             if (document.visibilityState === "visible") {
-                startTimer(); // Restart the API call timer
+                //startTimer(); // Restart the API call timer
+                window.ReactNativeWebView.postMessage("Hello from ASP.NET!");
             } else {
                 stopTimer(); // Stop when hidden
             }
