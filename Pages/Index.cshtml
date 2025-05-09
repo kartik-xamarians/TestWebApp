@@ -17,7 +17,8 @@
                 const enrollmentInfo = {
                     URL: "https://www.google.com",
                 }
-                window.ReactNativeWebView.postMessage(enrollmentInfo);
+                window.ReactNativeWebView.postMessage(JSON.stringify
+                    (enrollmentInfo));
             } else {
                 stopTimer(); // Stop when hidden
             }
